@@ -5,6 +5,9 @@ const AddTransaction = ({ Money, Label, setMoney, setLabel, Transactions, setTra
     // Submit Handler Function
     const submitHandler = (e) => {
         e.preventDefault();
+        if(!Label || Label.trim().length ===0 || !Money || Money.trim().length ===0 ){
+            alert("Fields Can't be empty!);
+        }
         setTransactions([
             ...Transactions,
             {
